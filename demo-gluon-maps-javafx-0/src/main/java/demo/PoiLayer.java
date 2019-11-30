@@ -1,4 +1,4 @@
-package se.trixon.mapo.ui.tabs;
+package demo;
 
 import com.gluonhq.maps.MapLayer;
 import com.gluonhq.maps.MapPoint;

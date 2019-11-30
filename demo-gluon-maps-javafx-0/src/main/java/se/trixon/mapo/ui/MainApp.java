@@ -27,10 +27,7 @@ import javafx.scene.input.KeyCombination;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
-import se.trixon.mapo.ui.tabs.GMapsFXTab;
 import se.trixon.mapo.ui.tabs.GluonMapsTab;
-import se.trixon.mapo.ui.tabs.JXMapViewer2;
-import se.trixon.mapo.ui.tabs.MapJfx;
 
 /**
  *
@@ -69,10 +66,7 @@ public class MainApp extends Application {
         mStage.setScene(scene);
 
         mTabPane.getTabs().addAll(
-                new MapJfx(),
-                new GluonMapsTab(),
-                new GMapsFXTab(),
-                new JXMapViewer2()
+                new GluonMapsTab()
         );
     }
 

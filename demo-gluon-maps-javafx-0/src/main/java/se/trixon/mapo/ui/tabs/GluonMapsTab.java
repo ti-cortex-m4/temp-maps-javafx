@@ -18,10 +18,10 @@ package se.trixon.mapo.ui.tabs;
 import com.gluonhq.maps.MapPoint;
 import com.gluonhq.maps.MapView;
 //import com.gluonhq.maps.demo.PoiLayer;
+import demo.PoiLayer;
 import javafx.scene.control.Tab;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
-import se.trixon.mapo.Mapo;
 
 /**
  *
@@ -29,12 +29,15 @@ import se.trixon.mapo.Mapo;
  */
 public class GluonMapsTab extends Tab {
 
+    public static final double MYLAT = 57.66;
+    public static final double MYLON = 12.0;
+
     public GluonMapsTab() {
         setText("Gluon Maps");
         MapView mapView = new MapView();
         setContent(mapView);
 
-        MapPoint mapPoint = new MapPoint(Mapo.MYLAT, Mapo.MYLON);
+        MapPoint mapPoint = new MapPoint(MYLAT, MYLON);
         PoiLayer poiLayer = new PoiLayer();
         poiLayer.addPoint(mapPoint, new Circle(8, Color.RED));
         mapView.addLayer(poiLayer);
