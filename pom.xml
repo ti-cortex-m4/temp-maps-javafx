@@ -10,6 +10,7 @@
 
     <properties>
         <java.version>13</java.version>
+        <javafx.version>13</javafx.version>
     </properties>
 
     <modules>
@@ -17,5 +18,23 @@
         <module>demo-gluon-maps-javafx-1</module>
         <module>demo-gluon-maps-javafx-2</module>
     </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-base</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-web</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+    </dependencies>
 
 </project>

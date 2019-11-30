@@ -3,50 +3,44 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>demo</groupId>
-    <artifactId>demo-gluon-maps-javafx</artifactId>
+    <parent>
+        <groupId>demo-maps-javafx</groupId>
+        <artifactId>parent</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>demo-gluon-maps-javafx-2</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <properties>
-        <javafx.version>13</javafx.version>
-        <gluonhq.version>4.0.2</gluonhq.version>
+        <gluonhq.version>2.0.0-ea+2</gluonhq.version>
+        <gluonhq.attach.version>4.0.2</gluonhq.attach.version>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-base</artifactId>
-            <version>${javafx.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-fxml</artifactId>
-            <version>${javafx.version}</version>
-        </dependency>
-
-        <dependency>
             <groupId>com.gluonhq</groupId>
             <artifactId>maps</artifactId>
-            <version>2.0.0-ea+2</version>
+            <version>${gluonhq.version}</version>
         </dependency>
 
         <dependency>
             <groupId>com.gluonhq.attach</groupId>
             <artifactId>storage</artifactId>
-            <version>${gluonhq.version}</version>
+            <version>${gluonhq.attach.version}</version>
             <classifier>desktop</classifier>
         </dependency>
         <dependency>
             <groupId>com.gluonhq.attach</groupId>
             <artifactId>position</artifactId>
-            <version>${gluonhq.version}</version>
+            <version>${gluonhq.attach.version}</version>
             <classifier>desktop</classifier>
         </dependency>
         <dependency>
             <groupId>com.gluonhq.attach</groupId>
             <artifactId>util</artifactId>
-            <version>${gluonhq.version}</version>
+            <version>${gluonhq.attach.version}</version>
         </dependency>
     </dependencies>
 
