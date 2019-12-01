@@ -1,17 +1,13 @@
-module org.modernclients.raspberrypi.gps {
+module demo2 {
     requires javafx.controls;
     requires javafx.fxml;
     requires com.gluonhq.maps;
     requires com.gluonhq.attach.storage;
     requires com.gluonhq.attach.position;
     requires com.gluonhq.attach.util;
-//    requires afterburner.fx;
-//    requires java.annotation;
     requires java.logging;
 
-    opens org.modernclients.raspberrypi.gps.model to afterburner.fx;
-    opens org.modernclients.raspberrypi.gps.service to afterburner.fx;
-    opens org.modernclients.raspberrypi.gps.view to afterburner.fx, javafx.fxml;
+    opens demo2.view to javafx.fxml;
 
-    exports org.modernclients.raspberrypi.gps;
+    exports demo2;
 }

@@ -1,9 +1,8 @@
-package org.modernclients.raspberrypi.gps.view;
+package demo2.view;
 
 import com.gluonhq.maps.MapPoint;
 import com.gluonhq.maps.MapView;
 import javafx.application.Platform;
-import javafx.beans.binding.Bindings;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -11,8 +10,6 @@ import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
-import org.modernclients.raspberrypi.gps.model.GPSPosition;
-import org.modernclients.raspberrypi.gps.service.GPSService;
 
 //import javax.inject.Inject;
 import java.text.MessageFormat;

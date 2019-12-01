@@ -1,4 +1,4 @@
-package org.modernclients.raspberrypi.gps.view;
+package demo2.view;
 
 import com.gluonhq.maps.MapLayer;
 import com.gluonhq.maps.MapPoint;

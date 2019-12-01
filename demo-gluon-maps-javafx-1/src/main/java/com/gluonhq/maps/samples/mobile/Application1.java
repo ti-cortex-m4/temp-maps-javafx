@@ -25,13 +25,13 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 
-public class MobileSample extends Application {
+public class Application1 extends Application {
 
-    private static final Logger LOGGER = Logger.getLogger(MobileSample.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(Application1.class.getName());
 
     static {
         try {
-            LogManager.getLogManager().readConfiguration(MobileSample.class.getResourceAsStream("/logging.properties"));
+            LogManager.getLogManager().readConfiguration(Application1.class.getResourceAsStream("/logging.properties"));
         } catch (IOException e) {
             LOGGER.log(Level.SEVERE, "Error reading logging properties file", e);
         }

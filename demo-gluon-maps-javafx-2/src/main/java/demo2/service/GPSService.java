@@ -1,17 +1,15 @@
-package org.modernclients.raspberrypi.gps.service;
+package demo2.service;
 
 //import com.pi4j.io.gpio.GpioController;
 //import com.pi4j.io.gpio.GpioFactory;
 //import com.pi4j.io.serial.*;
+import demo2.model.GPSPosition;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import org.modernclients.raspberrypi.gps.model.GPSPosition;
 
 //import javax.annotation.PostConstruct;
 //import javax.inject.Inject;
-import java.io.IOException;
-import java.nio.charset.Charset;
 import java.util.logging.Logger;
 
 public class GPSService {

@@ -1,8 +1,8 @@
-package org.modernclients.raspberrypi.gps.service;
+package demo2.service;
 
+import demo2.model.GPSPosition;
 import javafx.beans.property.FloatProperty;
 import javafx.beans.property.Property;
-import org.modernclients.raspberrypi.gps.model.GPSPosition;
 
 import java.util.HashMap;
 import java.util.Map;
