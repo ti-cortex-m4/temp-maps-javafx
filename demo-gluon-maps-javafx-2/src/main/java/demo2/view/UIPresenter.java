@@ -11,7 +11,6 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 
-//import javax.inject.Inject;
 import java.text.MessageFormat;
 import java.util.ResourceBundle;
 import java.util.logging.Logger;
@@ -94,7 +93,6 @@ public class UIPresenter {
     }
 
     public void stop() {
-//        service.stop();
     }
 
     @FXML private void onExit(){
