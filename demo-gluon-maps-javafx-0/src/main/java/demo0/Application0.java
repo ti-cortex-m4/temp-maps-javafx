@@ -1,4 +1,4 @@
-package demo;
+package demo0;
 
 import com.gluonhq.maps.MapPoint;
 import com.gluonhq.maps.MapView;
@@ -10,8 +10,8 @@ import javafx.stage.Stage;
 
 public class Application0 extends Application {
 
-    public static final double MYLAT = 57.66;
-    public static final double MYLON = 12.0;
+    private static final double LATITUDE = 57.66;
+    private static final double LONGITUDE = 12.0;
 
     public static void main(String[] args) {
         launch(args);
@@ -21,7 +21,7 @@ public class Application0 extends Application {
     public void start(Stage stage) throws Exception {
         MapView mapView = new MapView();
 
-        MapPoint mapPoint = new MapPoint(MYLAT, MYLON);
+        MapPoint mapPoint = new MapPoint(LATITUDE, LONGITUDE);
         PoiLayer poiLayer = new PoiLayer();
         poiLayer.addPoint(mapPoint, new Circle(8, Color.RED));
         mapView.addLayer(poiLayer);
@@ -30,16 +30,8 @@ public class Application0 extends Application {
         mapView.flyTo(1., mapPoint, 2.);
 
         Scene scene = new Scene(mapView);
-        stage.setTitle("Embedded Maps");
+        stage.setTitle("Gluon Maps demo");
         stage.setScene(scene);
         stage.show();
-
-//        mStage = primaryStage;
-//        primaryStage.getIcons().add(new Image(MainApp.class.getResourceAsStream("majincline-globe-1024px.png")));
-//
-//        createUI();
-//        initAccelerators();
-//        mStage.setTitle(APP_TITLE + " - a collection of map renderers for Java desktop applications");
-//        mStage.show();
     }
 }

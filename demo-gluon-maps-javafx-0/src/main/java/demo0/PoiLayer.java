@@ -1,4 +1,4 @@
-package demo;
+package demo0;
 
 import com.gluonhq.maps.MapLayer;
 import com.gluonhq.maps.MapPoint;
@@ -17,7 +17,7 @@ public class PoiLayer extends MapLayer {
     }
 
     public void addPoint(MapPoint p, Node icon) {
-        points.add(new Pair(p, icon));
+        points.add(new Pair<>(p, icon));
         this.getChildren().add(icon);
         this.markDirty();
     }
