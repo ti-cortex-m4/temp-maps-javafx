@@ -35,7 +35,7 @@ public class LocationService {
 //    http://myexternalip.com/raw
 //    http://ipecho.net/plain
 
-    public IP() {
+    public void IP() {
         URL ipAdress;
 
         try {
