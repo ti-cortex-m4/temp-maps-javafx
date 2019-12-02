@@ -10,9 +10,6 @@ import javafx.stage.Stage;
 
 public class Application0 extends Application {
 
-    private static final double LATITUDE = 57.66;
-    private static final double LONGITUDE = 12.0;
-
     public static void main(String[] args) {
         launch(args);
     }
@@ -21,11 +18,11 @@ public class Application0 extends Application {
     public void start(Stage stage) throws Exception {
         MapView mapView = new MapView();
 
-        MapPoint mapPoint = new MapPoint(LATITUDE, LONGITUDE);
+        MapPoint mapPoint = new MapPoint(52.516667, 13.388889);
         PoiLayer poiLayer = new PoiLayer();
         poiLayer.addPoint(mapPoint, new Circle(8, Color.RED));
         mapView.addLayer(poiLayer);
-        mapView.setZoom(3);
+        mapView.setZoom(7);
 
         mapView.flyTo(1., mapPoint, 2.);
 

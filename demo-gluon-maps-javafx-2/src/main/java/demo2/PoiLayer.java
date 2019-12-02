@@ -1,4 +1,4 @@
-package demo2.view;
+package demo2;
 
 import com.gluonhq.maps.MapLayer;
 import com.gluonhq.maps.MapPoint;

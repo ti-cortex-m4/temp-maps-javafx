@@ -1,4 +1,4 @@
-package demo2.view;
+package demo2;
 
 import com.gluonhq.maps.MapPoint;
 import com.gluonhq.maps.MapView;
@@ -10,7 +10,7 @@ import javafx.scene.shape.Circle;
 
 import java.util.ResourceBundle;
 
-public class UIPresenter {
+public class MyController {
 
     @FXML
     private BorderPane pane;

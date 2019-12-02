@@ -12,6 +12,10 @@ import java.util.ResourceBundle;
 
 public class Application2 extends Application {
 
+    public static void main(String[] args) {
+        launch(args);
+    }
+
     @Override
     public void start(Stage stage) throws Exception {
         Rectangle2D bounds = Screen.getPrimary().getBounds();
@@ -23,13 +27,5 @@ public class Application2 extends Application {
         stage.setTitle("Gluon Maps demo");
         stage.setScene(scene);
         stage.show();
-    }
-
-    @Override
-    public void stop() throws Exception {
-    }
-
-    public static void main(String[] args) {
-        launch(args);
     }
 }
