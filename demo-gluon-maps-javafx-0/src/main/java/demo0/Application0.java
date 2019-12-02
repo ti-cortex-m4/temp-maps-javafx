@@ -9,11 +9,11 @@ import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
-import location.PositionService2Impl;
+import location.MyPositionServiceImpl;
 
 public class Application0 extends Application {
 
-    private PositionService positionService = new PositionService2Impl();
+    private PositionService positionService = new MyPositionServiceImpl();
 
     public static void main(String[] args) {
         launch(args);
@@ -24,8 +24,7 @@ public class Application0 extends Application {
         MapView mapView = new MapView();
 
         Position position = positionService.getPosition();
-
-        MapPoint mapPoint = new MapPoint(position.getLatitude(), position.getLongitude()); // new MapPoint(52.516667, 13.388889);
+        MapPoint mapPoint = new MapPoint(position.getLatitude(), position.getLongitude());
         PoiLayer poiLayer = new PoiLayer();
         poiLayer.addPoint(mapPoint, new Circle(8, Color.RED));
         mapView.addLayer(poiLayer);
