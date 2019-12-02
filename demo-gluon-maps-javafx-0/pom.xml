@@ -20,6 +20,12 @@
 
     <dependencies>
         <dependency>
+            <groupId>demo-maps-javafx</groupId>
+            <artifactId>location</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
             <groupId>com.gluonhq</groupId>
             <artifactId>maps</artifactId>
             <version>${gluonhq.version}</version>
