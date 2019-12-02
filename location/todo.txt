@@ -1,0 +1,5 @@
+https://dev.maxmind.com/geoip/geoip2/geolite2/
+https://www.baeldung.com/geolocation-by-ip-with-maxmind
+https://o7planning.org/en/10455/retrieving-geographic-information-based-on-ip-address-using-geoip2-java-api
+https://jxbrowser.support.teamdev.com/support/solutions/articles/9000013137-jxbrowser-vs-javafx-webview
+https://github.com/maxmind/GeoIP2-java
