@@ -15,7 +15,7 @@ public class Application0 extends Application {
     }
 
     @Override
-    public void start(Stage stage) throws Exception {
+    public void start(Stage stage) {
         MapView mapView = new MapView();
 
         MapPoint mapPoint = new MapPoint(52.516667, 13.388889);
