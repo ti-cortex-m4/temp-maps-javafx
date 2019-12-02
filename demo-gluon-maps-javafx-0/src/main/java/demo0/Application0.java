@@ -9,7 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
-import location.MyPositionServiceImpl;
+import demo.maps.javafx.location.MyPositionServiceImpl;
 
 public class Application0 extends Application {
 

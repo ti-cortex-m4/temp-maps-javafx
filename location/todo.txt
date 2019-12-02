@@ -1,2 +1,0 @@
-https://dev.maxmind.com/geoip/geoip2/geolite2/
-https://jxbrowser.support.teamdev.com/support/solutions/articles/9000013137-jxbrowser-vs-javafx-webview

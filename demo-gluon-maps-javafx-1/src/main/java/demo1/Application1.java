@@ -24,7 +24,7 @@ import java.util.logging.Logger;
 
 public class Application1 extends Application {
 
-    private static final Logger LOGGER = Logger.getLogger(Application1.class.getName());
+    private static final Logger logger = Logger.getLogger(Application1.class.getName());
 
     private MapPoint mapPoint;
 
@@ -40,10 +40,12 @@ public class Application1 extends Application {
         } else {
             BorderPane bp = new BorderPane();
             bp.setCenter(view);
-            final Label label = new Label("Gluon Maps demo");
+
+            Label label = new Label("Gluon Maps demo");
             label.setAlignment(Pos.CENTER);
             label.setMaxWidth(Double.MAX_VALUE);
             label.setStyle("-fx-background-color: dimgrey; -fx-text-fill: white;");
+
             bp.setTop(label);
             Rectangle2D bounds = Screen.getPrimary().getVisualBounds();
             scene = new Scene(bp, bounds.getWidth(), bounds.getHeight());
@@ -65,20 +67,20 @@ public class Application1 extends Application {
                         position = new Position(48.8567, 2.3508);
                     }
                     mapPoint = new MapPoint(position.getLatitude(), position.getLongitude());
-                    LOGGER.log(Level.INFO, "Initial Position: " + position.getLatitude() + ", " + position.getLongitude());
+                    logger.log(Level.INFO, "Initial Position: " + position.getLatitude() + ", " + position.getLongitude());
 
                     PoiLayer answer = new PoiLayer();
                     answer.addPoint(mapPoint, new Circle(7, Color.RED));
 
                     positionProperty.addListener(e -> {
                         Position pos = positionProperty.get();
-                        LOGGER.log(Level.INFO, "New Position: " + pos.getLatitude() + ", " + pos.getLongitude());
+                        logger.log(Level.INFO, "New Position: " + pos.getLatitude() + ", " + pos.getLongitude());
                         mapPoint.update(pos.getLatitude(), pos.getLongitude());
                     });
                     return answer;
                 })
                 .orElseGet(() -> {
-                    LOGGER.log(Level.WARNING, "Position Service not available");
+                    logger.log(Level.WARNING, "Position Service not available");
                     PoiLayer answer = new PoiLayer();
                     mapPoint = new MapPoint(48.8567, 2.3508);
                     answer.addPoint(mapPoint, new Circle(7, Color.RED));

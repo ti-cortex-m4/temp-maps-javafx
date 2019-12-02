@@ -1,4 +1,4 @@
-package location;
+package demo.maps.javafx.location;
 
 import com.gluonhq.attach.position.Parameters;
 import com.gluonhq.attach.position.Position;
@@ -9,29 +9,20 @@ import com.maxmind.geoip2.record.Location;
 import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.beans.property.ReadOnlyObjectPropertyBase;
 
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.net.InetAddress;
-import java.net.URL;
 import java.util.logging.Logger;
 
 public class MyPositionServiceImpl implements PositionService {
 
     private static final Logger logger = Logger.getLogger(MyPositionServiceImpl.class.getName());
 
-    private final String[] URLS = {
-            "http://checkip.amazonaws.com/",
-            "https://ipv4.icanhazip.com/",
-            "http://myexternalip.com/raw",
-            "http://ipecho.net/plain",
-    };
-
+    private final MyIpService myIpService = new MyIpService();
     private final DatabaseReader databaseReader;
 
     public MyPositionServiceImpl() {
-        try (InputStream is = this.getClass().getResourceAsStream("/GeoLite2-City.mmdb")){
+        try (InputStream is = this.getClass().getResourceAsStream("/GeoLite2-City.mmdb")) {
             databaseReader = new DatabaseReader.Builder(is).build();
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -61,14 +52,12 @@ public class MyPositionServiceImpl implements PositionService {
     @Override
     public Position getPosition() {
         try {
-            InetAddress inetAddress = getInetAddress();
-            logger.info("The IP address: " + inetAddress);
-            CityResponse response = databaseReader.city(inetAddress);
+            InetAddress ip = myIpService.getIp();
+            logger.info("The IP: " + ip);
+            CityResponse response = databaseReader.city(ip);
             Location location = response.getLocation();
             logger.info("The location: " + location);
-            double latitude = location.getLatitude();
-            double longitude = location.getLongitude();
-            return new Position(latitude, longitude);
+            return new Position(location.getLatitude(), location.getLongitude());
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -87,24 +76,5 @@ public class MyPositionServiceImpl implements PositionService {
     @Override
     public void stop() {
         logger.info("The service has stopped: " + this);
-    }
-
-    // InetAddress ipAddress = InetAddress.getLocalHost();
-    private InetAddress getInetAddress() {
-        for (String url : URLS) {
-            try {
-                return getInetAddress(url);
-            } catch (Exception e) {
-                logger.info("Impossible to get public IP with the provider: " + url);
-            }
-        }
-        throw new RuntimeException("Impossible to get public IP");
-    }
-
-    private InetAddress getInetAddress(String url) throws Exception {
-        try (BufferedReader br = new BufferedReader(new InputStreamReader(new URL(url).openStream()))) {
-            String host = br.readLine();
-            return InetAddress.getByName(host);
-        }
     }
 }

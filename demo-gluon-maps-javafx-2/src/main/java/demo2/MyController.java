@@ -1,7 +1,10 @@
 package demo2;
 
+import com.gluonhq.attach.position.Position;
+import com.gluonhq.attach.position.PositionService;
 import com.gluonhq.maps.MapPoint;
 import com.gluonhq.maps.MapView;
+import demo.maps.javafx.location.MyPositionServiceImpl;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.layout.BorderPane;
@@ -21,14 +24,17 @@ public class MyController {
     @FXML
     private ResourceBundle resources;
 
+    private PositionService positionService = new MyPositionServiceImpl();
+
     public void initialize() {
         mapView = new MapView();
-        MapPoint mapPoint = new MapPoint(51.507222, -0.1275);
+        Position position = positionService.getPosition();
+        MapPoint mapPoint = new MapPoint(position.getLatitude(), position.getLongitude());
         mapView.setCenter(mapPoint);
         mapView.setZoom(10);
 
         PoiLayer poiLayer = new PoiLayer();
-        poiLayer.addPoint(mapPoint, new Circle(7, Color.RED));
+        poiLayer.addPoint(mapPoint, new Circle(8, Color.RED));
         mapView.addLayer(poiLayer);
         pane.setCenter(mapView);
     }
