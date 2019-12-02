@@ -1,6 +1,7 @@
 package demo0;
 
 import com.gluonhq.attach.position.Position;
+import com.gluonhq.attach.position.PositionService;
 import com.gluonhq.maps.MapPoint;
 import com.gluonhq.maps.MapView;
 import javafx.application.Application;
@@ -8,11 +9,11 @@ import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
-import location.LocationService;
+import location.PositionService2Impl;
 
 public class Application0 extends Application {
 
-    private LocationService locationService = new LocationService();
+    private PositionService positionService = new PositionService2Impl();
 
     public static void main(String[] args) {
         launch(args);
@@ -22,7 +23,7 @@ public class Application0 extends Application {
     public void start(Stage stage) throws Exception {
         MapView mapView = new MapView();
 
-        Position position = locationService.getLocation();
+        Position position = positionService.getPosition();
 
         MapPoint mapPoint = new MapPoint(position.getLatitude(), position.getLongitude()); // new MapPoint(52.516667, 13.388889);
         PoiLayer poiLayer = new PoiLayer();

@@ -14,8 +14,8 @@
     <packaging>jar</packaging>
 
     <properties>
-        <gluonhq.version>2.0.0-ea+2</gluonhq.version>
         <gluonhq.attach.version>4.0.2</gluonhq.attach.version>
+        <geoip2.version>2.12.0</geoip2.version>
     </properties>
 
     <dependencies>
@@ -29,7 +29,7 @@
         <dependency>
             <groupId>com.maxmind.geoip2</groupId>
             <artifactId>geoip2</artifactId>
-            <version>2.12.0</version>
+            <version>${geoip2.version}</version>
         </dependency>
     </dependencies>
 
