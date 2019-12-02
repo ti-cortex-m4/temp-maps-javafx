@@ -16,58 +16,9 @@
    <bottom>
       <ListView fx:id="listView" maxHeight="200.0" BorderPane.alignment="CENTER" />
    </bottom>
-   <right>
-      <VBox prefHeight="250.0" prefWidth="200.0" styleClass="box" BorderPane.alignment="CENTER">
-         <children>
-            <VBox>
-               <children>
-                  <Label styleClass="gps" text="%label.time" />
-                  <Label fx:id="timeLabel" styleClass="gps-data" />
-               </children>
-            </VBox>
-            <VBox>
-               <children>
-                  <Label styleClass="gps" text="%label.position" />
-                  <Label fx:id="positionLabel" styleClass="gps-data" />
-               </children>
-            </VBox>
-            <VBox>
-               <children>
-                  <Label styleClass="gps" text="%label.altitude" />
-                  <Label fx:id="altitudeLabel" styleClass="gps-data" />
-               </children>
-            </VBox>
-            <VBox>
-               <children>
-                  <Label styleClass="gps" text="%label.direction" />
-                  <Label fx:id="directionLabel" styleClass="gps-data" />
-               </children>
-            </VBox>
-            <VBox layoutX="10.0" layoutY="112.0">
-               <children>
-                  <Label styleClass="gps" text="%label.speed" />
-                  <Label fx:id="speedLabel" styleClass="gps-data" />
-               </children>
-            </VBox>
-            <VBox layoutX="10.0" layoutY="146.0">
-               <children>
-                  <Label styleClass="gps" text="%label.quality" />
-                  <Label fx:id="qualityLabel" styleClass="gps-data" />
-               </children>
-            </VBox>
-            <VBox layoutX="10.0" layoutY="146.0">
-               <children>
-                  <Label styleClass="gps" text="%label.satellites" />
-                  <Label fx:id="satellitesLabel" styleClass="gps-data" />
-               </children>
-            </VBox>
-         </children>
-      </VBox>
-   </right>
    <top>
       <ToolBar BorderPane.alignment="CENTER">
          <items>
-            <Label fx:id="statusLabel" styleClass="gps-data" text="%label.gps" />
             <Pane maxWidth="1.7976931348623157E308" prefWidth="200.0" />
             <Separator orientation="VERTICAL" />
             <ToggleButton fx:id="showLog" mnemonicParsing="false" text="%button.show.log" />
