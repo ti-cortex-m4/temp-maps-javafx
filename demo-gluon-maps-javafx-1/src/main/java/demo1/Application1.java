@@ -1,4 +1,4 @@
-package com.gluonhq.maps.samples.mobile;
+package demo1;
 
 import com.gluonhq.attach.position.Position;
 import com.gluonhq.attach.position.PositionService;
@@ -12,30 +12,19 @@ import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.geometry.Pos;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
-import javafx.stage.Screen;
-import javafx.stage.Stage;
-
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.LogManager;
-import java.util.logging.Logger;
-
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+import javafx.stage.Screen;
+import javafx.stage.Stage;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Application1 extends Application {
 
     private static final Logger LOGGER = Logger.getLogger(Application1.class.getName());
-
-    static {
-        try {
-            LogManager.getLogManager().readConfiguration(Application1.class.getResourceAsStream("/logging.properties"));
-        } catch (IOException e) {
-            LOGGER.log(Level.SEVERE, "Error reading logging properties file", e);
-        }
-    }
 
     private MapPoint mapPoint;
 
@@ -47,11 +36,11 @@ public class Application1 extends Application {
         Scene scene;
         if (Platform.isDesktop()) {
             scene = new Scene(view, 600, 700);
-            stage.setTitle("Gluon Maps Demo");
+            stage.setTitle("Gluon Maps demo");
         } else {
             BorderPane bp = new BorderPane();
             bp.setCenter(view);
-            final Label label = new Label("Gluon Maps Demo");
+            final Label label = new Label("Gluon Maps demo");
             label.setAlignment(Pos.CENTER);
             label.setMaxWidth(Double.MAX_VALUE);
             label.setStyle("-fx-background-color: dimgrey; -fx-text-fill: white;");
@@ -73,7 +62,7 @@ public class Application1 extends Application {
                     ReadOnlyObjectProperty<Position> positionProperty = positionService.positionProperty();
                     Position position = positionProperty.get();
                     if (position == null) {
-                        position = new Position(50., 4.);
+                        position = new Position(48.8567, 2.3508);
                     }
                     mapPoint = new MapPoint(position.getLatitude(), position.getLongitude());
                     LOGGER.log(Level.INFO, "Initial Position: " + position.getLatitude() + ", " + position.getLongitude());
@@ -91,7 +80,7 @@ public class Application1 extends Application {
                 .orElseGet(() -> {
                     LOGGER.log(Level.WARNING, "Position Service not available");
                     PoiLayer answer = new PoiLayer();
-                    mapPoint = new MapPoint(50., 4.);
+                    mapPoint = new MapPoint(48.8567, 2.3508);
                     answer.addPoint(mapPoint, new Circle(7, Color.RED));
                     return answer;
                 });

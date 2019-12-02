@@ -1,4 +1,4 @@
-package com.gluonhq.maps.samples.mobile;
+package demo1;
 
 import com.gluonhq.maps.MapLayer;
 import com.gluonhq.maps.MapPoint;

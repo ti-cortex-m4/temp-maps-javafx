@@ -22,7 +22,7 @@ public class Application0 extends Application {
         PoiLayer poiLayer = new PoiLayer();
         poiLayer.addPoint(mapPoint, new Circle(8, Color.RED));
         mapView.addLayer(poiLayer);
-        mapView.setZoom(7);
+        mapView.setZoom(3);
 
         mapView.flyTo(1., mapPoint, 2.);
 
