@@ -11,6 +11,7 @@ import javafx.beans.property.ReadOnlyObjectPropertyBase;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.InetAddress;
 import java.net.URL;
@@ -30,8 +31,8 @@ public class MyPositionServiceImpl implements PositionService {
     private final DatabaseReader databaseReader;
 
     public MyPositionServiceImpl() {
-        try {
-            databaseReader = new DatabaseReader.Builder(this.getClass().getResourceAsStream("/GeoLite2-City.mmdb")).build();
+        try (InputStream is = this.getClass().getResourceAsStream("/GeoLite2-City.mmdb")){
+            databaseReader = new DatabaseReader.Builder(is).build();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
