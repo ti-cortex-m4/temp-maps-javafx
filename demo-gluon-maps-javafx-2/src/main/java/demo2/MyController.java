@@ -31,7 +31,7 @@ public class MyController {
         Position position = positionService.getPosition();
         MapPoint mapPoint = new MapPoint(position.getLatitude(), position.getLongitude());
         mapView.setCenter(mapPoint);
-        mapView.setZoom(10);
+        mapView.setZoom(3);
 
         PoiLayer poiLayer = new PoiLayer();
         poiLayer.addPoint(mapPoint, new Circle(8, Color.RED));

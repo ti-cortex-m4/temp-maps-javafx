@@ -9,6 +9,7 @@
     <packaging>pom</packaging>
 
     <properties>
+        <maven.compiler.release>13</maven.compiler.release>
         <java.version>13</java.version>
         <javafx.version>13</javafx.version>
     </properties>
