@@ -1,4 +1,4 @@
-package demo2;
+package demo.maps.javafx.demo2;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

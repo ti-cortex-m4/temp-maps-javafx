@@ -3,6 +3,7 @@ import demo.maps.javafx.location.MyPositionServiceImpl;
 
 module demo.maps.javafx.location {
 
+    requires java.logging;
     requires javafx.base;
     requires com.gluonhq.attach.position;
 

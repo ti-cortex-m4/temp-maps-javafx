@@ -1,4 +1,4 @@
-package demo2;
+package demo.maps.javafx.demo2;
 
 import com.gluonhq.maps.MapLayer;
 import com.gluonhq.maps.MapPoint;

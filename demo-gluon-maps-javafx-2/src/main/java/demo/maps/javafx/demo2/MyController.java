@@ -1,4 +1,4 @@
-package demo2;
+package demo.maps.javafx.demo2;
 
 import com.gluonhq.attach.position.Position;
 import com.gluonhq.attach.position.PositionService;
