@@ -26,6 +26,10 @@ public class Application1 extends Application {
 
     private MapPoint mapPoint;
 
+    public static void main(String[] args) {
+        launch(args);
+    }
+
     @Override
     public void start(Stage stage) {
         Services.registerServiceFactory(new DefaultServiceFactory<>(PositionService.class) {
