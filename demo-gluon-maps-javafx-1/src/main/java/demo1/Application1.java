@@ -29,7 +29,7 @@ public class Application1 extends Application {
 
     private static final Logger logger = Logger.getLogger(Application1.class.getName());
 
-    private MapPoint mapPoint;
+//    private MapPoint mapPoint;
 
     @Override
     public void start(Stage stage) {
@@ -63,7 +63,7 @@ public class Application1 extends Application {
         stage.setScene(scene);
         stage.show();
 
-        view.flyTo(1., mapPoint, 2.);
+//        view.flyTo(1., mapPoint, 2.);
     }
 
     private MapLayer positionLayer() {
@@ -73,27 +73,27 @@ public class Application1 extends Application {
 
                     ReadOnlyObjectProperty<Position> positionProperty = positionService.positionProperty();
                     Position position = positionProperty.get();
-                    if (position == null) {
-                        position = new Position(48.8567, 2.3508);
-                    }
-                    mapPoint = new MapPoint(position.getLatitude(), position.getLongitude());
-                    logger.log(Level.INFO, "Initial Position: " + position.getLatitude() + ", " + position.getLongitude());
+//                    if (position == null) { TODO
+//                        position = new Position(48.8567, 2.3508);
+//                    }
+                    MapPoint mapPoint = new MapPoint(position.getLatitude(), position.getLongitude());
+//                    logger.log(Level.INFO, "Initial Position: " + position.getLatitude() + ", " + position.getLongitude());
 
                     PoiLayer answer = new PoiLayer();
-                    answer.addPoint(mapPoint, new Circle(7, Color.RED));
+                    answer.addPoint(mapPoint, new Circle(8, Color.RED));
 
-                    positionProperty.addListener(e -> {
-                        Position pos = positionProperty.get();
-                        logger.log(Level.INFO, "New Position: " + pos.getLatitude() + ", " + pos.getLongitude());
-                        mapPoint.update(pos.getLatitude(), pos.getLongitude());
-                    });
+//                    positionProperty.addListener(e -> {
+//                        Position pos = positionProperty.get();
+//                        logger.log(Level.INFO, "New Position: " + pos.getLatitude() + ", " + pos.getLongitude());
+//                        mapPoint.update(pos.getLatitude(), pos.getLongitude());
+//                    });
                     return answer;
                 })
                 .orElseGet(() -> {
                     logger.log(Level.WARNING, "Position Service not available");
                     PoiLayer answer = new PoiLayer();
-                    mapPoint = new MapPoint(48.8567, 2.3508);
-                    answer.addPoint(mapPoint, new Circle(7, Color.RED));
+//                    mapPoint = new MapPoint(48.8567, 2.3508);
+//                    answer.addPoint(mapPoint, new Circle(7, Color.RED));
                     return answer;
                 });
     }
