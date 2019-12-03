@@ -42,7 +42,7 @@ public class Application1 extends Application {
         });
 
         MapView view = new MapView();
-        view.addLayer(positionLayer());
+        view.addLayer(getMapLayer());
         view.setZoom(3);
         Scene scene;
         if (Platform.isDesktop()) {
@@ -75,7 +75,7 @@ public class Application1 extends Application {
         }
     }
 
-    private MapLayer positionLayer() {
+    private MapLayer getMapLayer() {
         return getPosition()
                 .map(position -> {
                      mapPoint = new MapPoint(position.getLatitude(), position.getLongitude());
