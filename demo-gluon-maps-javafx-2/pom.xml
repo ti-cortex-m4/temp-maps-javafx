@@ -43,6 +43,12 @@
             <version>${gluonhq.attach.version}</version>
             <classifier>desktop</classifier>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.gluonhq.attach</groupId>-->
+<!--            <artifactId>lifecycle</artifactId>-->
+<!--            <version>${gluonhq.attach.version}</version>-->
+<!--            <classifier>desktop</classifier>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>com.gluonhq.attach</groupId>
             <artifactId>util</artifactId>

@@ -4,9 +4,11 @@ import com.gluonhq.attach.position.Position;
 import com.gluonhq.attach.position.PositionService;
 import com.gluonhq.attach.util.Platform;
 import com.gluonhq.attach.util.Services;
+import com.gluonhq.attach.util.impl.DefaultServiceFactory;
 import com.gluonhq.maps.MapLayer;
 import com.gluonhq.maps.MapPoint;
 import com.gluonhq.maps.MapView;
+import demo.maps.javafx.location.MyPositionServiceImpl;
 import javafx.application.Application;
 import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.geometry.Pos;
@@ -19,6 +21,7 @@ import javafx.scene.shape.Circle;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
+import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -30,6 +33,13 @@ public class Application1 extends Application {
 
     @Override
     public void start(Stage stage) {
+        Services.registerServiceFactory(new DefaultServiceFactory<PositionService>(PositionService.class) {
+            @Override
+            public Optional<PositionService> getInstance() {
+                return Optional.of(new MyPositionServiceImpl());
+            }
+        });
+
         MapView view = new MapView();
         view.addLayer(positionLayer());
         view.setZoom(3);
