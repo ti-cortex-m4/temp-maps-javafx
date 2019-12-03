@@ -31,7 +31,7 @@ public class MyPositionServiceImpl implements PositionService {
 
     @Override
     public ReadOnlyObjectProperty<Position> positionProperty() {
-        return new ReadOnlyObjectPropertyBase<Position>() {
+        return new ReadOnlyObjectPropertyBase<>() {
             @Override
             public Object getBean() {
                 return null;

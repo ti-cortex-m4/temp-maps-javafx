@@ -33,7 +33,7 @@ public class Application1 extends Application {
 
     @Override
     public void start(Stage stage) {
-        Services.registerServiceFactory(new DefaultServiceFactory<PositionService>(PositionService.class) {
+        Services.registerServiceFactory(new DefaultServiceFactory<>(PositionService.class) {
             @Override
             public Optional<PositionService> getInstance() {
                 return Optional.of(new MyPositionServiceImpl());
