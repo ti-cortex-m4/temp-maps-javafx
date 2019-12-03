@@ -38,9 +38,11 @@ public class Application1 extends Application {
         MapView view = new MapView();
         view.addLayer(getMapLayer());
         view.setZoom(3);
-        Scene scene = new Scene(view, 600, 700);
+
+        Scene scene = new Scene(view);
         stage.setTitle("Gluon Maps demo");
         stage.setScene(scene);
+        stage.setMaximized(true);
         stage.show();
 
         if (mapPoint != null) {
@@ -75,8 +77,6 @@ public class Application1 extends Application {
                     ReadOnlyObjectProperty<Position> positionProperty = positionService.positionProperty();
                     return Optional.ofNullable(positionProperty.get());
                 })
-                .orElseGet(() -> {
-                    return Optional.empty();
-                });
+                .orElseGet(Optional::empty);
     }
 }
